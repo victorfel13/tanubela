@@ -12,7 +12,6 @@ export function Footer() {
         maxWidth: 1460,
         mx: 'auto',
         bgcolor: '#000',
-        border: '1px solid rgba(255,255,255,0.28)',
         py: { xs: 3, md: 4 },
         px: { xs: 2, md: 3 },
         textAlign: 'center',

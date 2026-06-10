@@ -7,6 +7,7 @@ import { Hero } from "./components/Hero/Hero";
 import { GlobalPlayer } from "./components/music/GlobalPlayer";
 import { Music } from "./components/music/Music";
 import { Navbar } from "./components/Navbar/Navbar";
+import { ScrollReveal } from "./components/shared/ScrollReveal";
 import { Style } from "./components/Style/Style";
 import { Video } from "./components/Video/Video";
 import styleBackground from "./assets/Estatic_assets/backgroud 2.svg";
@@ -20,24 +21,24 @@ export default function App() {
       <Box id="inicio">
         <Hero img={heroLogo} backgroundImageSrc={heroBackground} />
       </Box>
-      <Box id="estilo">
+      <ScrollReveal sectionId="estilo">
         <Style backgroundImageSrc={styleBackground} />
-      </Box>
-      <Box id="musica">
+      </ScrollReveal>
+      <ScrollReveal sectionId="musica">
         <Music />
-      </Box>
-      <Box id="video">
+      </ScrollReveal>
+      <ScrollReveal sectionId="video">
         <Video />
-      </Box>
-      <Box id="galeria">
+      </ScrollReveal>
+      <ScrollReveal sectionId="galeria">
         <Gallery />
-      </Box>
-      <Box id="tienda">
+      </ScrollReveal>
+      <ScrollReveal sectionId="tienda">
         <Shop />
-      </Box>
-      <Box id="contacto">
+      </ScrollReveal>
+      <ScrollReveal sectionId="contacto">
         <Contact />
-      </Box>
+      </ScrollReveal>
       <Footer />
       <GlobalPlayer />
     </Box>

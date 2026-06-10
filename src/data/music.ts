@@ -1,3 +1,8 @@
+import auraAudio from '../assets/audio/Tanúbela & Entrópica - Aura.mp3'
+import despertarRemixAudio from '../assets/audio/DESPERTAR (CRISTOPHER JUNGLE REMIX)  MSTR_r1_session_20260305.mp3'
+import despertarAudio from '../assets/audio/Tanúbela - Despertar.mp3'
+import sourceAudio from '../assets/audio/Tanúbela - Source.mp3'
+import tribalAudio from '../assets/audio/Tanúbela - Tribal.mp3'
 import auraCover from '../assets/cover/aura.jpg'
 import despertarCover from '../assets/cover/despertar.jpg'
 import sagradaCover from '../assets/cover/sagrada.jpg'
@@ -31,7 +36,7 @@ export const musicData: MusicTrack[] = [
     description:
       'Primer sencillo como solista. Lanzada en abril 2023. Habla acerca de reconocer a la tribu que te rodea y honrar a las tribus de las que haz formado parte en el pasado. Sembrando bendiciones para tribus futuras.',
     coverSrc: tribalCover,
-    audioUrl: 'https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav',
+    audioUrl: tribalAudio,
     links: {
       spotify: 'https://open.spotify.com/intl-es/track/6I76oYlOr5RiZjAUVsi6KU',
       youtube: '#',
@@ -47,7 +52,7 @@ export const musicData: MusicTrack[] = [
     description:
       'Lanzada en diciembre de 2023. Canción acerca del despertar espiritual como un llamado a romper contratos energéticos o kármicos hechos en vidas pasadas.',
     coverSrc: despertarCover,
-    audioUrl: 'https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand3.wav',
+    audioUrl: despertarAudio,
     links: {
       spotify: 'https://open.spotify.com/intl-es/track/19S2YGYOKFrK5qOfsC0d5H',
       youtube: '#',
@@ -62,9 +67,9 @@ export const musicData: MusicTrack[] = [
     description:
       'Remix de Despertar en colaboración con Cristopher Jungle. Lanzado en 2026 como sencillo, expandiendo la atmósfera original hacia una lectura electrónica más profunda y envolvente.',
     coverSrc: despertarCover,
-    audioUrl: 'https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand3.wav',
+    audioUrl: despertarRemixAudio,
     links: {
-      spotify: 'https://open.spotify.com/intl-es/track/19S2YGYOKFrK5qOfsC0d5H',
+      spotify: 'https://open.spotify.com/intl-es/track/5prRUKTBpsiseaHcfwoIV0',
       youtube: '#',
     },
   },
@@ -77,7 +82,7 @@ export const musicData: MusicTrack[] = [
     description:
       'Lanzada en octubre 2024. Esta canción fue hecha para visibilizar nuestro poder interior que muchas veces apagamos o permitimos que se apague. Source trata acerca de recordar ese poder que yace dentro de nosotros y nuestra capacidad de reconocer esta fuerza interior.',
     coverSrc: sourceCover,
-    audioUrl: 'https://www2.cs.uic.edu/~i101/SoundFiles/ImperialMarch60.wav',
+    audioUrl: sourceAudio,
     links: {
       spotify: 'https://open.spotify.com/intl-es/track/6l33FHzbyOTQp2zXwfbvrL',
       youtube: '#',
@@ -92,7 +97,7 @@ export const musicData: MusicTrack[] = [
     description:
       'Lanzada en marzo 2025. Una canción que honra nuestra ira interior y la reconoce como una emoción poderosa y sagrada, invitándonos a transitarla con consciencia, sin condenarla y a transmutarla en algo auspicioso.',
     coverSrc: sagradaCover,
-    audioUrl: 'https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav',
+    audioUrl: '',
     links: {
       spotify: 'https://open.spotify.com/intl-es/track/5EBJi3tNXj4eQoFOdphPDU',
       youtube: '#',
@@ -107,7 +112,7 @@ export const musicData: MusicTrack[] = [
     description:
       "Lanzada en julio 2025. 'Aura' feat. Entrópica, artista chilena con gran trayectoria en el experimental latinoamericano. Esta colaboración no sólo representa una conexión artística entre dos países y estilos, sino un manifiesto sonoro que honra el perdón, la transformación interior y la esencia verdadera dentro cada unx de nosotrxs.",
     coverSrc: auraCover,
-    audioUrl: 'https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav',
+    audioUrl: auraAudio,
     links: {
       spotify: 'https://open.spotify.com/intl-es/track/4GGVeAGDT7WV8oSwBPuFOe',
       youtube: '#',

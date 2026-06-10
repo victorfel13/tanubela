@@ -9,7 +9,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useState } from 'react'
+import { useState, type MouseEvent } from 'react'
 import {
   FaFacebookF,
   FaInstagram,
@@ -20,6 +20,7 @@ import {
 import type { IconType } from 'react-icons/lib'
 import { SiApplemusic, SiTidal } from 'react-icons/si'
 import { navItems, socials } from '../../data/infoText'
+import { scrollToSection } from '../../utils/scrollToSection'
 import { WaveIcon } from '../shared/WaveIcon'
 
 const iconByPlatform: Record<string, IconType> = {
@@ -49,6 +50,12 @@ export function Navbar() {
 
   const closeMenu = () => setOpen(false)
 
+  const handleSectionNav = (event: MouseEvent<HTMLElement>, href: string) => {
+    event.preventDefault()
+    closeMenu()
+    void scrollToSection(href.replace('#', ''))
+  }
+
   return (
     <Box
       component="header"
@@ -76,7 +83,11 @@ export function Navbar() {
           aria-label={isMobile ? (open ? 'Cerrar menú' : 'Abrir menú') : 'Ir al inicio'}
           component={isMobile ? 'button' : 'a'}
           href={isMobile ? undefined : '#inicio'}
-          onClick={isMobile ? () => setOpen((v) => !v) : undefined}
+          onClick={
+            isMobile
+              ? () => setOpen((v) => !v)
+              : (event: MouseEvent<HTMLElement>) => handleSectionNav(event, '#inicio')
+          }
           sx={{ color: '#fff', p: 0.75 }}
         >
           <WaveIcon height={{ xs: 14, md: 16 }} />
@@ -93,7 +104,12 @@ export function Navbar() {
         >
           <Stack direction="row" spacing={2.5}>
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} sx={navLinkSx}>
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={(event) => handleSectionNav(event, item.href)}
+                sx={navLinkSx}
+              >
                 {item.label}
               </Link>
             ))}
@@ -144,7 +160,7 @@ export function Navbar() {
               key={item.href}
               component="a"
               href={item.href}
-              onClick={closeMenu}
+              onClick={(event) => handleSectionNav(event, item.href)}
               sx={{
                 color: 'rgba(255,255,255,0.9)',
                 letterSpacing: '0.12em',

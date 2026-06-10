@@ -16,3 +16,30 @@ html {
 [id] {
   scroll-margin-top: 56px;
 }
+
+/* Entrada al scroll: sutil, editorial — sin bounce ni zoom típico de plantillas */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

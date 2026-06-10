@@ -28,17 +28,17 @@ export function ResonanciaShowcase() {
           alt="Portada Resonancia"
           sx={{
             width: '100%',
-            height: { xs: 'auto', md: '100%' },
+            height: { xs: 340, md: '100%' },
             minHeight: { md: 500 },
             objectFit: 'cover',
-            objectPosition: 'center',
+            objectPosition: { xs: '50% 0%', md: 'center' },
             display: 'block',
           }}
         />
 
         <Box
           sx={{
-            display: 'flex',
+            display: { xs: 'none', md: 'flex' },
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
@@ -71,8 +71,9 @@ export function ResonanciaShowcase() {
 
         <Box
           sx={{
+            display: { xs: 'none', md: 'block' },
             overflow: 'hidden',
-            minHeight: { xs: 300, md: 500 },
+            minHeight: { md: 500 },
             bgcolor: '#000',
           }}
         >
@@ -83,7 +84,7 @@ export function ResonanciaShowcase() {
             sx={{
               width: { xs: '100%', md: '220%' },
               height: '100%',
-              minHeight: { xs: 300, md: 500 },
+              minHeight: { md: 500 },
               objectFit: 'cover',
               objectPosition: 'right center',
               display: 'block',

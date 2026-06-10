@@ -38,13 +38,21 @@ export const styleInfo = {
 } as const;
 
 export const socials: SocialLink[] = [
-  { platform: "Facebook", url: "#", icon: "FB" },
-  { platform: "Instagram", url: "#", icon: "IG" },
-  { platform: "TikTok", url: "#", icon: "TK" },
-  { platform: "YouTube", url: "#", icon: "YT" },
-  { platform: "Tidal", url: "#", icon: "TD" },
-  { platform: "Spotify", url: "#", icon: "SP" },
-  { platform: "Apple Music", url: "#", icon: "AM" },
+  { platform: "Facebook", url: "https://www.facebook.com/tanubelamusic", icon: "FB" },
+  { platform: "Instagram", url: "https://www.instagram.com/tanubela/", icon: "IG" },
+  { platform: "TikTok", url: "https://www.tiktok.com/@tanubela", icon: "TK" },
+  { platform: "YouTube", url: "https://www.youtube.com/@Tanubela", icon: "YT" },
+  { platform: "Tidal", url: "https://tidal.com/artist/37894472/u", icon: "TD" },
+  {
+    platform: "Spotify",
+    url: "https://open.spotify.com/intl-es/artist/0vpQ8Xa7egiLfmua6DNTfP?si=rdgNhunxQlSblIlxiy4t6w",
+    icon: "SP",
+  },
+  {
+    platform: "Apple Music",
+    url: "https://music.apple.com/mx/artist/tan%C3%BAbela/1676653145",
+    icon: "AM",
+  },
 ];
 
 export const extrasInfo = {
@@ -77,7 +85,7 @@ export const shopInfo = {
   subtitle: "Mercancía, ediciones y pedidos especiales.",
   instagramLabel: "Instagram",
   whatsappLabel: "WhatsApp",
-  instagramUrl: "https://www.instagram.com/",
+  instagramUrl: "https://www.instagram.com/tanubela/",
   whatsappUrl: "https://wa.me/529999004125",
 } as const;
 
@@ -99,5 +107,5 @@ export const footerInfo = {
     `© ${new Date().getFullYear()} Tanúbela. Todos los derechos reservados.`,
     `© ${new Date().getFullYear()} Sureste Records. Todos los derechos reservados.`,
   ],
-  siteCredit: "Sitio creado por Victor Camara Salinas",
+  siteCredit: "Sitio creado por Mini Desk y Victor Camara Salinas",
 } as const;

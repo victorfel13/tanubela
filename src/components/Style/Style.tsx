@@ -6,8 +6,6 @@ type StyleProps = {
   backgroundImageSrc: string
 }
 
-const PANEL_BORDER = '1px solid rgb(110, 196, 255)'
-
 export function Style({ backgroundImageSrc }: StyleProps) {
   const { email, managerLine, phone } = artistInfo.contact
 
@@ -17,7 +15,6 @@ export function Style({ backgroundImageSrc }: StyleProps) {
         width: '98%',
         maxWidth: 1460,
         mx: 'auto',
-        border: '1px solid rgba(255,255,255,0.28)',
         overflow: 'hidden',
       }}
     >
@@ -87,23 +84,11 @@ export function Style({ backgroundImageSrc }: StyleProps) {
           <Box
             sx={{
               width: '100%',
-              maxWidth: { xs: '100%', md: 540 },
-              border: PANEL_BORDER,
+              maxWidth: { xs: '100%', md: 480 },
               px: { xs: 2.5, md: 3.5 },
               py: { xs: 3, md: 4 },
-              backgroundImage: `
-                linear-gradient(
-                  165deg,
-                  rgba(18, 38, 95, 0.9) 0%,
-                  rgba(12, 28, 72, 0.94) 45%,
-                  rgba(8, 20, 58, 0.96) 100%
-                ),
-                url(${backgroundImageSrc})
-              `,
-              backgroundSize: 'cover',
-              backgroundPosition: { xs: '62% center', md: '68% center' },
-              backgroundRepeat: 'no-repeat',
-              boxShadow: 'inset 0 0 100px rgba(0, 25, 80, 0.35)',
+              bgcolor: 'rgba(0, 0, 0, 0.48)',
+              backdropFilter: 'blur(2px)',
             }}
           >
             <GenreStyleTitle title={styleInfo.title} />

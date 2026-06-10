@@ -13,8 +13,6 @@ export function Featurings() {
         width: '98%',
         maxWidth: 1460,
         mx: 'auto',
-        border: '1px solid rgba(255,255,255,0.28)',
-        borderTop: 'none',
         px: 0,
         overflow: 'hidden',
       }}

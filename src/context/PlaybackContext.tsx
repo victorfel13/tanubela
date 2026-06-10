@@ -18,6 +18,7 @@ type PlaybackContextValue = {
   playTrack: (track: MusicTrack) => void
   togglePlayback: () => void
   pauseAudio: () => void
+  stopPlayback: () => void
   onAudioPlay: () => void
   onAudioPause: () => void
   onAudioEnded: () => void
@@ -65,6 +66,12 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
     setPlayingId(null)
   }, [])
 
+  const stopPlayback = useCallback(() => {
+    audioRef.current?.pause()
+    setPlayingId(null)
+    setCurrentTrack(null)
+  }, [])
+
   const onAudioPlay = useCallback(() => {
     setPlayingId(currentTrack?.id ?? null)
   }, [currentTrack?.id])
@@ -86,6 +93,7 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
       playTrack,
       togglePlayback,
       pauseAudio,
+      stopPlayback,
       onAudioPlay,
       onAudioPause,
       onAudioEnded,
@@ -97,6 +105,7 @@ export function PlaybackProvider({ children }: { children: ReactNode }) {
       playTrack,
       togglePlayback,
       pauseAudio,
+      stopPlayback,
       onAudioPlay,
       onAudioPause,
       onAudioEnded,

@@ -14,7 +14,6 @@ export function Hero({ img, backgroundImageSrc }: HeroProps) {
         maxWidth: 1460,
         mx: 'auto',
         py: 2,
-        border: '1px solid rgba(255,255,255,0.28)',
         position: 'relative',
         overflow: 'hidden',
         backgroundImage: `url(${backgroundImageSrc})`,

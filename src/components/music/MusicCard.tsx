@@ -1,6 +1,5 @@
 import { Box, IconButton, Stack, Typography } from '@mui/material'
-import { FaCheckCircle, FaEllipsisH, FaPlay } from 'react-icons/fa'
-import { HiOutlineArrowDownTray } from 'react-icons/hi2'
+import { FaEllipsisH, FaPlay, FaSpotify } from 'react-icons/fa'
 import type { MusicTrack } from '../../data/music'
 import { usePlayback } from '../../hooks/usePlayback'
 
@@ -9,7 +8,7 @@ type MusicCardProps = {
 }
 
 export function MusicCard({ track }: MusicCardProps) {
-  const { currentTrack, playingId, playTrack } = usePlayback()
+  const { currentTrack, playingId, playTrack, stopPlayback } = usePlayback()
   const selected = currentTrack?.id === track.id
   const isPlaying = playingId === track.id
 
@@ -91,12 +90,23 @@ export function MusicCard({ track }: MusicCardProps) {
           >
             <FaPlay size={12} />
           </IconButton>
-          <Box component="span" sx={{ color: '#1db954', display: 'flex' }} aria-hidden>
-            <FaCheckCircle size={18} />
-          </Box>
-          <Box component="span" sx={{ color: 'rgba(255,255,255,0.75)', display: 'flex' }} aria-hidden>
-            <HiOutlineArrowDownTray size={18} />
-          </Box>
+          {track.links.spotify && track.links.spotify !== '#' ? (
+            <IconButton
+              component="a"
+              href={track.links.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir ${track.title} en Spotify`}
+              onClick={stopPlayback}
+              sx={{
+                color: '#1db954',
+                p: 0.5,
+                '&:hover': { bgcolor: 'rgba(29, 185, 84, 0.12)' },
+              }}
+            >
+              <FaSpotify size={18} />
+            </IconButton>
+          ) : null}
           <Box component="span" sx={{ color: 'rgba(255,255,255,0.75)', display: 'flex' }} aria-hidden>
             <FaEllipsisH size={16} />
           </Box>

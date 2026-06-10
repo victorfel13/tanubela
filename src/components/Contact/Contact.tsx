@@ -44,8 +44,6 @@ export function Contact() {
         maxWidth: 1460,
         mx: 'auto',
         bgcolor: LAVENDER,
-        border: '1px solid rgba(255,255,255,0.28)',
-        borderTop: 'none',
         py: { xs: 3, md: 4 },
         px: { xs: 2, md: 3 },
       }}
