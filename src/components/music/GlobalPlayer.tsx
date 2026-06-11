@@ -59,18 +59,22 @@ export function GlobalPlayer() {
         zIndex: 1200,
         bgcolor: '#000',
         borderTop: '1px solid rgba(255,255,255,0.28)',
+        width: '100%',
+        maxWidth: '100%',
+        overflow: 'hidden',
       }}
     >
       <Box
         sx={{
-          width: '98%',
+          width: '100%',
           maxWidth: 1460,
           mx: 'auto',
-          px: { xs: 1.5, md: 2 },
+          px: { xs: 1.25, md: 2 },
           py: 1.25,
           display: 'flex',
           alignItems: 'center',
-          gap: { xs: 1.25, md: 2 },
+          gap: { xs: 1, md: 2 },
+          minWidth: 0,
         }}
       >
         <IconButton
@@ -91,9 +95,10 @@ export function GlobalPlayer() {
 
         <Typography
           sx={{
-            minWidth: { xs: 72, md: 120 },
-            maxWidth: { xs: 100, md: 200 },
-            fontSize: '0.88rem',
+            flex: { xs: 1, sm: 'unset' },
+            minWidth: 0,
+            maxWidth: { xs: '100%', md: 200 },
+            fontSize: { xs: '0.82rem', md: '0.88rem' },
             fontWeight: 600,
             color: '#fff',
             letterSpacing: '0.02em',
@@ -107,6 +112,7 @@ export function GlobalPlayer() {
 
         <Typography
           sx={{
+            display: { xs: 'none', sm: 'block' },
             flexShrink: 0,
             fontSize: '0.75rem',
             color: 'rgba(255,255,255,0.72)',
@@ -127,6 +133,7 @@ export function GlobalPlayer() {
           onChange={handleSeek}
           sx={{
             flex: 1,
+            minWidth: { xs: 56, sm: 120 },
             color: '#fff',
             height: 4,
             py: 1.25,

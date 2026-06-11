@@ -46,7 +46,11 @@ export function ScrollReveal({ children, sectionId, delay = 0 }: ScrollRevealPro
       ref={ref}
       id={sectionId}
       className={visible ? 'scroll-reveal is-visible' : 'scroll-reveal'}
-      sx={{ transitionDelay: `${delay}ms` }}
+      sx={{
+        transitionDelay: `${delay}ms`,
+        maxWidth: '100%',
+        overflow: 'hidden',
+      }}
     >
       {children}
     </Box>

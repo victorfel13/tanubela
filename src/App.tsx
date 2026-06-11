@@ -6,18 +6,40 @@ import { Gallery } from "./components/Gallery/Gallery";
 import { Hero } from "./components/Hero/Hero";
 import { GlobalPlayer } from "./components/music/GlobalPlayer";
 import { Music } from "./components/music/Music";
-import { Navbar } from "./components/Navbar/Navbar";
+import { Navbar, NAVBAR_HEIGHT } from "./components/Navbar/Navbar";
 import { ScrollReveal } from "./components/shared/ScrollReveal";
 import { Style } from "./components/Style/Style";
 import { Video } from "./components/Video/Video";
+import { usePlayback } from "./hooks/usePlayback";
 import styleBackground from "./assets/Estatic_assets/backgroud 2.svg";
 import heroBackground from "./assets/Estatic_assets/backgroung_hero.svg";
 import heroLogo from "./assets/Estatic_assets/logo.svg";
 
 export default function App() {
+  const { currentTrack } = usePlayback();
+
   return (
-    <Box sx={{ bgcolor: "#000", color: "#fff", minHeight: "100vh", pb: 12 }}>
+    <Box
+      sx={{
+        bgcolor: "#000",
+        color: "#fff",
+        minHeight: "100vh",
+        width: "100%",
+        maxWidth: "100%",
+        overflowX: "hidden",
+        pb: currentTrack ? 8 : 0,
+      }}
+    >
       <Navbar />
+      <Box
+        component="main"
+        sx={{
+          pt: `${NAVBAR_HEIGHT.xs}px`,
+          '@media (min-width: 900px)': {
+            pt: `${NAVBAR_HEIGHT.md}px`,
+          },
+        }}
+      >
       <Box id="inicio">
         <Hero img={heroLogo} backgroundImageSrc={heroBackground} />
       </Box>
@@ -40,6 +62,7 @@ export default function App() {
         <Contact />
       </ScrollReveal>
       <Footer />
+      </Box>
       <GlobalPlayer />
     </Box>
   );

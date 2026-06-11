@@ -43,6 +43,9 @@ const navLinkSx = {
   '&:hover': { color: '#fff' },
 } as const
 
+/** Altura reservada bajo el navbar fijo */
+export const NAVBAR_HEIGHT = { xs: 52, md: 56 } as const
+
 export function Navbar() {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
@@ -60,8 +63,11 @@ export function Navbar() {
     <Box
       component="header"
       sx={{
-        position: 'sticky',
+        position: 'fixed',
         top: 0,
+        left: 0,
+        right: 0,
+        width: '100%',
         zIndex: 1100,
         bgcolor: '#000',
         borderBottom: '1px solid rgba(255,255,255,0.28)',

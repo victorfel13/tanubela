@@ -7,14 +7,34 @@ body,
 #root {
   margin: 0;
   min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  position: relative;
+  width: 100%;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
 [id] {
-  scroll-margin-top: 56px;
+  scroll-margin-top: 52px;
+}
+
+@media (min-width: 900px) {
+  [id] {
+    scroll-margin-top: 56px;
+  }
 }
 
 /* Entrada al scroll: sutil, editorial — sin bounce ni zoom típico de plantillas */
