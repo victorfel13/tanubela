@@ -82,11 +82,12 @@ export const navItems = [
 
 export const shopInfo = {
   title: "Tienda",
-  subtitle: "Mercancía, ediciones y pedidos especiales.",
+  subtitle: "Mercancía y pedidos especiales. Escríbenos por Instagram o WhatsApp.",
   instagramLabel: "Instagram",
   whatsappLabel: "WhatsApp",
+  phone: "999 135 4823",
   instagramUrl: "https://www.instagram.com/tanubela/",
-  whatsappUrl: "https://wa.me/529999004125",
+  whatsappUrl: "https://wa.me/529991354823",
 } as const;
 
 export const contactInfo = {

@@ -1,6 +1,7 @@
 import { Box, Button, Stack, Typography } from '@mui/material'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { shopInfo } from '../../data/infoText'
+import { shopItems } from '../../data/shop'
 import { SectionBanner } from '../shared/SectionBanner'
 
 const LAVENDER = '#b9b4d8'
@@ -79,10 +80,49 @@ export function Shop() {
               '&:hover': { borderColor: '#111', bgcolor: 'rgba(255,255,255,0.35)' },
             }}
           >
-            {shopInfo.whatsappLabel}
+            {shopInfo.whatsappLabel} · {shopInfo.phone}
           </Button>
         </Stack>
       </Box>
+
+      {shopItems.length > 0 ? (
+        <Box
+          sx={{
+            bgcolor: '#000',
+            px: { xs: 2, md: 3 },
+            py: { xs: 2.5, md: 3 },
+          }}
+        >
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: 'repeat(2, 1fr)',
+                sm: 'repeat(3, 1fr)',
+                md: 'repeat(4, 1fr)',
+              },
+              gap: 1,
+            }}
+          >
+            {shopItems.map((item) => (
+              <Box
+                key={item.id}
+                component="img"
+                src={item.src}
+                alt=""
+                loading="lazy"
+                sx={{
+                  width: '100%',
+                  aspectRatio: '1',
+                  objectFit: 'contain',
+                  display: 'block',
+                  bgcolor: '#111',
+                }}
+              />
+            ))}
+          </Box>
+        </Box>
+      ) : null}
     </Box>
   )
 }

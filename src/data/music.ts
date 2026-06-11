@@ -1,10 +1,12 @@
 import auraAudio from '../assets/audio/Tanúbela & Entrópica - Aura.mp3'
 import despertarRemixAudio from '../assets/audio/DESPERTAR (CRISTOPHER JUNGLE REMIX)  MSTR_r1_session_20260305.mp3'
 import despertarAudio from '../assets/audio/Tanúbela - Despertar.mp3'
+import sagradaAudio from '../assets/audio/Tanúbela - Sagrada.mp3'
 import sourceAudio from '../assets/audio/Tanúbela - Source.mp3'
 import tribalAudio from '../assets/audio/Tanúbela - Tribal.mp3'
 import auraCover from '../assets/cover/aura.jpg'
 import despertarCover from '../assets/cover/despertar.jpg'
+import despertarRemixCover from '../assets/cover/Remix-Despertar-COVER-Tanúbela-1080-x-1080px.jpg.jpeg'
 import sagradaCover from '../assets/cover/sagrada.jpg'
 import sourceCover from '../assets/cover/source.jpg'
 import tribalCover from '../assets/cover/tribal.jpg'
@@ -66,7 +68,7 @@ export const musicData: MusicTrack[] = [
     trackCount: 1,
     description:
       'Remix de Despertar en colaboración con Cristopher Jungle. Lanzado en 2026 como sencillo, expandiendo la atmósfera original hacia una lectura electrónica más profunda y envolvente.',
-    coverSrc: despertarCover,
+    coverSrc: despertarRemixCover,
     audioUrl: despertarRemixAudio,
     links: {
       spotify: 'https://open.spotify.com/intl-es/track/5prRUKTBpsiseaHcfwoIV0',
@@ -97,7 +99,7 @@ export const musicData: MusicTrack[] = [
     description:
       'Lanzada en marzo 2025. Una canción que honra nuestra ira interior y la reconoce como una emoción poderosa y sagrada, invitándonos a transitarla con consciencia, sin condenarla y a transmutarla en algo auspicioso.',
     coverSrc: sagradaCover,
-    audioUrl: '',
+    audioUrl: sagradaAudio,
     links: {
       spotify: 'https://open.spotify.com/intl-es/track/5EBJi3tNXj4eQoFOdphPDU',
       youtube: '#',

@@ -17,20 +17,24 @@ export type GalleryItem = {
   fileName: string;
 };
 
-/** Dos globs: en algunos sistemas `*.WEBP` no coincide con `*.webp`. */
+/** Globs estáticos (Vite no admite rutas dinámicas en import.meta.glob). */
 const localModules = {
-  ...import.meta.glob<{ default: string }>("../assets/galery/*.webp", {
-    eager: true,
-  }),
-  ...import.meta.glob<{ default: string }>("../assets/galery/*.WEBP", {
-    eager: true,
-  }),
-  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.webp", {
-    eager: true,
-  }),
-  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.WEBP", {
-    eager: true,
-  }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.webp", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.WEBP", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.png", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.PNG", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.jpg", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.JPG", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.jpeg", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/galery/*.JPEG", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.webp", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.WEBP", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.png", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.PNG", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.jpg", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.JPG", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.jpeg", { eager: true }),
+  ...import.meta.glob<{ default: string }>("../assets/GaleryRegistrer/*.JPEG", { eager: true }),
 };
 
 function itemsFromLocalFolder(): GalleryItem[] {

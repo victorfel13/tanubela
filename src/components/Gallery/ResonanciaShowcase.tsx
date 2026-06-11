@@ -1,5 +1,7 @@
 import { Box, Typography } from '@mui/material'
+import { galleryItems } from '../../data/images'
 import { resonanciaInfo } from '../../data/gallery'
+import { GalleryCarousel } from './GalleryCarousel'
 import { ResonanciaEye } from './ResonanciaEye'
 
 const ACCENT = {
@@ -9,6 +11,10 @@ const ACCENT = {
 
 export function ResonanciaShowcase() {
   const { tracklist, description, images } = resonanciaInfo
+  const carouselItems =
+    galleryItems.length > 0
+      ? galleryItems
+      : [{ id: 'session-back', src: images.back, fileName: 'Resonancia — sesión' }]
 
   return (
     <Box sx={{ bgcolor: '#000' }}>
@@ -77,21 +83,19 @@ export function ResonanciaShowcase() {
             bgcolor: '#000',
           }}
         >
-          <Box
-            component="img"
-            src={images.back}
-            alt="Resonancia — sesión"
-            sx={{
-              width: { xs: '100%', md: '220%' },
-              height: '100%',
-              minHeight: { md: 500 },
-              objectFit: 'cover',
-              objectPosition: 'right center',
-              display: 'block',
-              ml: { md: 'auto' },
-            }}
-          />
+          <GalleryCarousel items={carouselItems} />
         </Box>
+      </Box>
+
+      <Box
+        sx={{
+          display: { xs: 'block', md: 'none' },
+          height: 380,
+          overflow: 'hidden',
+          bgcolor: '#000',
+        }}
+      >
+        <GalleryCarousel items={carouselItems} />
       </Box>
 
       <Box

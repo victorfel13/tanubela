@@ -1,8 +1,10 @@
 import { Box } from '@mui/material'
-import { ResonanciaShowcase } from './ResonanciaShowcase'
+import { galleryItems } from '../../data/images'
+import { GalleryCarousel } from './GalleryCarousel'
 
-/** Bloque Resonancia del press kit. El grid de fotos se activará cuando haya más assets en `assets/galery/`. */
 export function Gallery() {
+  if (galleryItems.length === 0) return null
+
   return (
     <Box
       sx={{
@@ -10,9 +12,18 @@ export function Gallery() {
         maxWidth: 1460,
         mx: 'auto',
         overflow: 'hidden',
+        bgcolor: '#000',
       }}
     >
-      <ResonanciaShowcase />
+      <Box
+        sx={{
+          height: { xs: 'min(72vh, 680px)', sm: 'min(78vh, 760px)', md: 'min(82vh, 900px)' },
+          maxWidth: { md: 720 },
+          mx: { md: 'auto' },
+        }}
+      >
+        <GalleryCarousel items={galleryItems} />
+      </Box>
     </Box>
   )
 }
