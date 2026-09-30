@@ -85,9 +85,9 @@ export const shopInfo = {
   subtitle: "Mercancía y pedidos especiales. Escríbenos por Instagram o WhatsApp.",
   instagramLabel: "Instagram",
   whatsappLabel: "WhatsApp",
-  phone: "999 135 4823",
+  phone: "999 900 4125",
   instagramUrl: "https://www.instagram.com/tanubela/",
-  whatsappUrl: "https://wa.me/529991354823",
+  whatsappUrl: "https://wa.me/529999004125",
 } as const;
 
 export const contactInfo = {
