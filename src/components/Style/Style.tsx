@@ -7,7 +7,7 @@ type StyleProps = {
 }
 
 export function Style({ backgroundImageSrc }: StyleProps) {
-  const { email, managerLine, phone } = artistInfo.contact
+  const { email, managerLine, phone, whatsappUrl } = artistInfo.contact
 
   return (
     <Box
@@ -44,7 +44,12 @@ export function Style({ backgroundImageSrc }: StyleProps) {
             </Typography>
           ))}
         </Box>
-        <StackedContact email={email} managerLine={managerLine} phone={phone} />
+        <StackedContact
+          email={email}
+          managerLine={managerLine}
+          phone={phone}
+          whatsappUrl={whatsappUrl}
+        />
       </Box>
 
       <Box
@@ -173,9 +178,10 @@ type StackedContactProps = {
   email: string
   managerLine: string
   phone: string
+  whatsappUrl: string
 }
 
-function StackedContact({ email, managerLine, phone }: StackedContactProps) {
+function StackedContact({ email, managerLine, phone, whatsappUrl }: StackedContactProps) {
   const rowSx = {
     py: 1.5,
     px: 2,
@@ -218,13 +224,22 @@ function StackedContact({ email, managerLine, phone }: StackedContactProps) {
         {managerLine}
       </Box>
       <Box
+        component="a"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`WhatsApp ${phone}`}
         sx={{
           ...rowSx,
+          display: 'block',
           bgcolor: '#b9b4d8',
           color: '#000',
           textAlign: 'left',
           textTransform: 'none',
           letterSpacing: '0.08em',
+          textDecoration: 'none',
+          cursor: 'pointer',
+          '&:hover': { bgcolor: '#aea8d0' },
         }}
       >
         {phone}

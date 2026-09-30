@@ -16,6 +16,7 @@ export const artistInfo = {
     managerLine: "MANAGER / ALEX CASTILLA",
     /** Teléfono con espacios como en el dossier */
     phone: "9999 00 41 25",
+    whatsappUrl: "https://wa.me/529999004125",
   },
 } as const;
 
